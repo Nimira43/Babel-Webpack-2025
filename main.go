@@ -14,7 +14,7 @@ var db *sql.DB
 
 func initDB() {
 	var err error
-	db, err = sql.Open("mysql", "root:root@('127.0.0.1)/htmx-go?parseTime=true")
+	db, err = sql.Open("mysql", "root:password1234@(127.0.0.1:4444)/htmx-go?parseTime=true")
 	if err != nil {
 		log.Fatal(err)
 	}
