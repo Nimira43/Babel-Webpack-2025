@@ -1,16 +1,31 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
 	"database/sql"
-	"github.com/gorilla/mux"
+	"fmt"
+	"log"
+	"net/http"
+
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/gorilla/mux"
 )
 
 var db *sql.DB
 
+func initDB() {
+	var err error
+	db, err = sql.Open("mysql", "root:root@('127.0.0.1)/htmx-go?parseTime=true")
+	if err != nil {
+		log.Fatal(err)
+	}
+	if err = db.Ping(); err != nil {
+		log.Fatal(err)
+	}	
+}
+
 func main() {
+	initDB()
+	defer db.Close()
 	gRouter := mux.NewRouter()
 	gRouter.HandleFunc("/", HomeHandler)
 	http.ListenAndServe(":3000", gRouter)
