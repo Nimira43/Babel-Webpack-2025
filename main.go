@@ -5,7 +5,10 @@ import (
 	"net/http"
 	"database/sql"
 	"github.com/gorilla/mux"
+	_ "github.com/go-sql-driver/mysql"
 )
+
+var db *sql.DB
 
 func main() {
 	gRouter := mux.NewRouter()
