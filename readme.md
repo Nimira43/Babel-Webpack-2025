@@ -1,5 +1,5 @@
-## Babel Webpack Starter - 2025 Edition
-###### This project is an upgraded version of an older Babel and Webpack starter pack, brought up to date with the latest standards and best practises for 2025.
+## Babel Webpack Bundler & Transpiler - 2025 
+###### This project is an upgraded version of an older Babel and Webpack starter pack for 2025.
 
 ### Dependencies
 
