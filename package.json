@@ -1,7 +1,7 @@
 {
   "name": "babel-webpack-25",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --output-public-path=/build/"

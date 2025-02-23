@@ -45,7 +45,7 @@ module.exports = {
     ]
   },
   devServer: {
-    static: { // Updated option
+    static: { 
       directory: path.join(__dirname, 'public')
     },
     compress: true,
