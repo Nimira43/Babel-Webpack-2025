@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'development', 
+  mode: 'development',
   entry: {
     app: [
       '@babel/polyfill',
@@ -13,7 +13,7 @@ module.exports = {
     filename: 'app.bundle.js',
   },
   module: {
-    rules: [ 
+    rules: [
       {
         test: /\.js?$/,
         exclude: /node_modules/,
@@ -45,9 +45,13 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'), 
+    static: { // Updated option
+      directory: path.join(__dirname, 'public')
+    },
     compress: true,
-    port: 9000 
+    port: 9000
   }
 }
+
+
 
